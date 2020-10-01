@@ -1,31 +1,26 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<time.h>
-int main(){
-int num;
-int count;
-int random;
-time_t t;
-srand((unsigned)time(&t));
-random = rand()%21;
-for(count = 0;count<5;count++){
-	printf("enter the number\n");
-	scanf("%d",&num);
-	if(random==num){
-		printf("your number is correct:%d",num);
-		break;
-	}
-	else if(random<num){
-		printf("your number is smaller then random number,look for another chance\n");
-	}
-	else if(random>num) {
-		printf("your number is greater it is greater then random number\n");
-	}
-	}
-	
-	
-		
-		
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+int main()
+{
+   int n, max, num, c;
 
-	return 0;
+   printf("Enter the number of random numbers you want\n");
+   scanf("%d", &n);
+
+   printf("Enter the maximum value of random number\n");
+   scanf("%d", &max);
+
+   printf("%d random numbers from 0 to %d are:\n", n, max);
+   
+   randomize();
+
+   for (c = 1; c <= n; c++)
+   {
+      num = random(max);
+      printf("%d\n",num);        
+   }
+
+   getch();
+   return 0;
 }
